@@ -102,6 +102,9 @@
     <Compile Include="Form\TopPerForm.Designer.cs">
       <DependentUpon>TopPerForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form\LevelForm\Level01.resx">
+      <DependentUpon>Level01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

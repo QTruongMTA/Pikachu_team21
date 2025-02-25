@@ -10,11 +10,29 @@ using System.Windows.Forms;
 
 namespace Pikachu_team21
 {
-    public partial class LoginForm: Form
+    public partial class frmLogin: Form
     {
-        public LoginForm()
+        public frmLogin()
         {
             InitializeComponent();
+        }
+
+        private void lblWelcome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            frmLevel01 lvform = new frmLevel01();
+            lvform.UpdateLabel(txtPlayerName.Text);
+            lvform.Show();
+            this.Hide();
+        }
+
+        private void txtPlayerName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
