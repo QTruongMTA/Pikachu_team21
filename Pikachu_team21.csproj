@@ -33,8 +33,48 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WMPLib.1.0.0\lib\AxInterop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WMPLib.1.0.0\lib\Interop.WMPLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.2.2.1\lib\net472\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Asio.2.2.1\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Core.2.2.1\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Midi.2.2.1\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Wasapi.2.2.1\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.WinForms.2.2.1\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.WinMM.2.2.1\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,29 +86,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Function\Support\Bomb.cs" />
+    <Compile Include="Control\Event.cs" />
     <Compile Include="Form\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\LevelForm\Level02.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\LevelForm\Level02.Designer.cs">
-      <DependentUpon>Level02.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\LevelForm\Level01.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\LevelForm\Level01.Designer.cs">
       <DependentUpon>Level01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\LevelForm\Level03.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\LevelForm\Level03.Designer.cs">
-      <DependentUpon>Level03.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\OutForm.cs">
       <SubType>Form</SubType>
@@ -88,6 +118,45 @@
     <Compile Include="Form\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\LevelForm\level02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\LevelForm\level02.Designer.cs">
+      <DependentUpon>level02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\LevelForm\level03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\LevelForm\level03.Designer.cs">
+      <DependentUpon>level03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Guide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Guide.Designer.cs">
+      <DependentUpon>Guide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Function\PokemonMatrix\GameMatrix.cs" />
+    <Compile Include="Function\PokemonMatrix\MatrixGenerator.cs" />
+    <Compile Include="Function\PokemonChecker\PathFinding.cs" />
+    <Compile Include="Data\Player.cs" />
+    <Compile Include="Data\GameStates.cs" />
+    <Compile Include="Data\PlayerList.cs" />
+    <Compile Include="Function\Support\Hint.cs" />
+    <Compile Include="Control\GameRule.cs" />
+    <Compile Include="Form\GameOver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\GameOver.Designer.cs">
+      <DependentUpon>GameOver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LevelData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Form\Setting.cs">
@@ -102,11 +171,43 @@
     <Compile Include="Form\TopPerForm.Designer.cs">
       <DependentUpon>TopPerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Selected.cs" />
+    <Compile Include="Control\Sound.cs" />
+    <EmbeddedResource Include="Form\Guide.resx">
+      <DependentUpon>Guide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\LevelForm\Level01.resx">
       <DependentUpon>Level01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\LevelForm\level02.resx">
+      <DependentUpon>level02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\LevelForm\level03.resx">
+      <DependentUpon>level03.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\OutForm.resx">
+      <DependentUpon>OutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\OutOrSave.resx">
+      <DependentUpon>OutOrSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\TopPerForm.resx">
+      <DependentUpon>TopPerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\GameOver.resx">
+      <DependentUpon>GameOver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -116,7 +217,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -130,12 +233,144 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ClassControl\" />
-    <Folder Include="ClassData\" />
-    <Folder Include="Function\Hint\" />
-    <Folder Include="Function\PokemonChecker\" />
-    <Folder Include="Function\PokemonMatrix\" />
+    <None Include="Resources\021.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Changeee1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d1c7f64661b1b68b0215a5a7527838c61.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d1c7f64661b1b68b0215a5a7527838c62.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level011.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Over1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\run1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a9e290f6914cc118a0b26d075ffd25561.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snapedit_17413665306991.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snapedit_17415378181971.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snapedit_17415421112731.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snapedit_17415421816511.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_101.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_sha1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Changeee2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d1c7f64661b1b68b0215a5a7527838c63.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hoenn1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kanto1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bulb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wave-sound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positive-vote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bronze-medal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\silver-medal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gold-medal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\back_10.jpg" />
+    <None Include="Resources\pause-button.png" />
+    <None Include="Resources\bomb.png" />
+    <None Include="Resources\lightning.png" />
+    <None Include="Resources\lightning-bolt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

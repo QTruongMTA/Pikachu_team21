@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Pikachu_team21
 {
-    public partial class TopPerForm: Form
+    public partial class frmTop: Form
     {
-        public TopPerForm()
+        public frmTop()
         {
             InitializeComponent();
+        }
+
+        private void frmTop_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

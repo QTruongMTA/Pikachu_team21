@@ -7,32 +7,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
+using System.IO;
+using System.Reflection;
+using NAudio.Wave;
 
 namespace Pikachu_team21
 {
-    public partial class frmLogin: Form
+    public partial class frmLogin : Form
     {
+        Sound sound = Sound.Instance;
+
         public frmLogin()
         {
             InitializeComponent();
         }
 
-        private void lblWelcome_Click(object sender, EventArgs e)
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            sound.PlaySou("TitleSound01");
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void LoginButton_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            frmLevel01 lvform = new frmLevel01();
-            lvform.UpdateLabel(txtPlayerName.Text);
-            lvform.Show();
+            
+            Player.Instance.SetName(txtPlayerName.Text);
+            frmHome home = new frmHome();
+            home.UpdateLabel();
+            home.Show();
             this.Hide();
         }
 
         private void txtPlayerName_TextChanged(object sender, EventArgs e)
         {
-
+            if (txtPlayerName.Text.Length > 10)
+            {
+                MessageBox.Show("Tên không được quá 10 ký tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPlayerName.Text = txtPlayerName.Text.Substring(0, 10);
+            }
         }
     }
 }
