@@ -36,8 +36,8 @@ namespace Pikachu_team21
                         var path = gameMatrix.PathConnect(boxes[i].Location, boxes[j].Location);
                         if (path != null && path.Count > 1)
                         {
-                            var p1 = (Point)boxes[i].Tag;
-                            var p2 = (Point)boxes[j].Tag;
+                            //Point p1 = (Point)boxes[i].Tag;
+                            //Point p2 = (Point)boxes[j].Tag;
 
                             HighlightBoxes(boxes[i], boxes[j]);
                             return true;

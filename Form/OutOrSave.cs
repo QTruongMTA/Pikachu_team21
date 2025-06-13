@@ -27,10 +27,8 @@ namespace Pikachu_team21
         {
             try
             {
-                // Lấy danh sách các PictureBox còn lại trên bàn chơi
                 List<PictureBox> playCells = GameMatrix.Instance.GetPictureBoxes();
                
-                // Lưu trạng thái game
                 GameStates.Instance.SaveGame(
                     Player.Instance.Name(),
                     Player.Instance.Score(),

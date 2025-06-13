@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -56,7 +57,21 @@ namespace Pikachu_team21
 
         private void updLevel_SelectedItemChanged(object sender, EventArgs e)
         {
-
+            /*if (updLevel.SelectedItem.ToString() == "Dễ")
+            {
+                frmLevel01 frmLevel01 = new frmLevel01();
+                frmLevel01.Show();
+            }
+            if (updLevel.SelectedItem.ToString() == "Trung bình")
+            {
+                level02 frmLevel02 = new level02();
+                frmLevel02.Show();
+            }
+            if (updLevel.SelectedItem.ToString() == "Khó")
+            {
+                level03 frmLevel03 = new level03();
+                frmLevel03.Show();
+            }*/
         }
 
         private void updMusic_SelectedItemChanged(object sender, EventArgs e)

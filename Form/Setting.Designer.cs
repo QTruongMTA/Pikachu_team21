@@ -91,9 +91,9 @@
             this.lblSetVol.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblSetVol.Location = new System.Drawing.Point(101, 287);
             this.lblSetVol.Name = "lblSetVol";
-            this.lblSetVol.Size = new System.Drawing.Size(196, 28);
+            this.lblSetVol.Size = new System.Drawing.Size(179, 28);
             this.lblSetVol.TabIndex = 8;
-            this.lblSetVol.Text = "ÂM LƯỢNG NỀN";
+            this.lblSetVol.Text = "COMING SOON";
             this.lblSetVol.Click += new System.EventHandler(this.lblSetVol_Click);
             // 
             // lblSetSound

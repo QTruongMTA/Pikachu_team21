@@ -62,16 +62,13 @@ namespace Pikachu_team21
 
             frmMain mainForm = new frmMain();
 
-            // Gán lại các thông số game
             mainForm.Score = state.score;
             Player.Instance.SetNumLevel(state.level);
             mainForm.TimeRemain = state.timeRemain;
 
-            // Tạo lại ma trận đúng kích thước
             mainForm.SetData(MatrixGenerator.Instance.CreateDisplayMatrix(state.rows, state.cols));
             GameMatrix.Instance.Display(mainForm.Panel3(), mainForm.Data());
 
-            // Cập nhật lại trạng thái từng ô
             List<PictureBox> playCells = GameMatrix.Instance.GetPictureBoxes();
             var cellStates = state.cellStates;
 
@@ -90,7 +87,6 @@ namespace Pikachu_team21
                 pb.Image = GameMatrix.Instance.GetImageByIndex(cell.imageIndex);
             }
 
-            // Cập nhật lại label tên, level, thời gian trên mainForm nếu có
             mainForm.UpLabel(Player.Instance.NumLevel());
 
             mainForm.Show();
