@@ -12,11 +12,8 @@ namespace Pikachu_team21
 {
     public partial class level03: Form
     {
-
-        private int numLevel = 3;
         Timer timer = new Timer();
-        private static int[,] lv3 = MatrixGenerator.Instance.CreateDisplayMatrix(9, 16);
-        LevelData level3 = new LevelData(lv3, 47, 300);
+
         public level03()
         {
             InitializeComponent();
@@ -32,9 +29,10 @@ namespace Pikachu_team21
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer.Stop();
+            Player.Instance.SetCapdo(3);
             frmMain main = new frmMain();
-            main.UpLabel(numLevel);
-            main.SetData(level3.Matrix);
+            main.UpLabel(Player.Instance.Capdo());
+            main.SetData(LevelData.Level3.Matrix);
             main.Show();
             this.Close();
         }

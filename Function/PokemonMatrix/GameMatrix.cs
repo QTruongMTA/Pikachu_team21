@@ -42,17 +42,24 @@ namespace Pikachu_team21
             set { soPokemon = value; }
         }
         private readonly List<PictureBox> listPictureBox = new List<PictureBox>();
-        private readonly List<Bitmap> images = LoadImages();
+        private readonly List<Bitmap> images = Load_HinhAnh();
         private PathFinding pathFinder;
+        private int soLanDoiChieu = 2;
+
+        public int SoLanDoiChieu
+        {
+            get { return soLanDoiChieu; }
+            set { soLanDoiChieu = value; }
+        }
 
         private GameMatrix() { }
 
         private static readonly Dictionary<int, Bitmap> imageCache = new Dictionary<int, Bitmap>();
         
 
-        static Bitmap ConvertToBitmap(byte[] byteArray)
+        static Bitmap EpByte_Bitmap(byte[] byteArray)
         {
-            if (!IsValidImage(byteArray))
+            if (!IsAnhHople(byteArray))
             {
                 
                 return new Bitmap(1, 1);
@@ -63,7 +70,7 @@ namespace Pikachu_team21
                 return new Bitmap(ms);
             }
         }
-        private static bool IsValidImage(byte[] byteArray)
+        private static bool IsAnhHople(byte[] byteArray)
         {
             try
             {
@@ -79,7 +86,7 @@ namespace Pikachu_team21
             }
         }
 
-        private static Bitmap GetImage(int index)
+        private static Bitmap Get_HinhAnh(int index)
         {
             if (!imageCache.ContainsKey(index))
             {
@@ -89,7 +96,7 @@ namespace Pikachu_team21
                 {
                     if (resource is byte[] byteArray)
                     {
-                        imageCache[index] = ConvertToBitmap(byteArray);
+                        imageCache[index] = EpByte_Bitmap(byteArray);
                     }
                     else
                     {
@@ -102,14 +109,14 @@ namespace Pikachu_team21
             return imageCache[index];
         }
 
-        private static List<Bitmap> LoadImages()
+        private static List<Bitmap> Load_HinhAnh()
         {
             var imageList = new List<Bitmap>();
             for (int i = 1; i <= MAX_POKEMON; i++)
             {
                 try
                 {
-                    imageList.Add(GetImage(i));
+                    imageList.Add(Get_HinhAnh(i));
                 }
                 catch (InvalidOperationException ex)
                 {
@@ -120,13 +127,13 @@ namespace Pikachu_team21
             return imageList;
         }
 
-        public void RemoveCell(PictureBox picture)
+        public void XoaHinhAnhHople(PictureBox picture)
         {
             picture.Visible = false;
             picture.Tag = 0;
         }
 
-        public List<Point> PathConnect(Point start, Point end)
+        public List<Point> DuongNoi(Point start, Point end)
         {
             if (pathFinder == null)
             {
@@ -134,93 +141,73 @@ namespace Pikachu_team21
                 return null;
             }
 
-            var allPaths = pathFinder.FindPaths(start, end, 2);
+            var allPaths = pathFinder.FindPaths(start, end, soLanDoiChieu);
 
             var firstValidPath = allPaths?.FirstOrDefault();
-            Console.WriteLine("PathConnect result: " + (firstValidPath == null ? "null" : string.Join(" -> ", firstValidPath.Select(p => $"({p.X}, {p.Y})"))));
+            Console.WriteLine("Ket qua duong noi: " + (firstValidPath == null ? "null" : string.Join(" -> ", firstValidPath.Select(p => $"({p.X}, {p.Y})"))));
             return firstValidPath;
         }
-
-        public int GetImageIndex(Image img)
-        {
-            for (int i = 0; i < images.Count; i++)
-            {
-                if (images[i] == img)
-                    return i;
-            }
-            return -1;
-        }
-        public Image GetImageByIndex(int index)
-        {
-            if (index >= 0 && index < images.Count)
-                return images[index];
-            return null;
-        }
-        public void Display(Panel panel, int[,] displayMatrix)
+        
+        public void HienThi(Panel panel, int[,] matranHienThi)
         {
             Random random = new Random();
-            Size size = new Size(35, 35);
-            int rows = displayMatrix.GetLength(0);
-            int cols = displayMatrix.GetLength(1);
-            int totalCells = (rows - 2) * (cols - 2);
+            Size size = new Size(48, 48);
+            int hangs = matranHienThi.GetLength(0);
+            int cots = matranHienThi.GetLength(1);
+            int tongSoBox = (hangs - 2) * (cots - 2);
             foreach (var pb in listPictureBox)
             {
-                //if (pb.Image != null)
-                //{
-                //    pb.Image.Dispose();
-                //    pb.Image = null;
-                //}
                 pb.Dispose();
             }
             panel.Controls.Clear();
             listPictureBox.Clear();
 
-            int totalPairs = totalCells / 2;
-            int pairsPerPokemon = totalPairs / SoPokemon;
-            int extraPairs = totalPairs % SoPokemon;
+            int tongSoCap = tongSoBox / 2;
+            int cap_moiPokemon = tongSoCap / SoPokemon;
+            int capNgoaiLe = tongSoCap % SoPokemon;
 
-            List<int> imageIndexes = new List<int>();
+            List<int> sohieuHinhAnh = new List<int>();
             for (int i = 0; i < SoPokemon; i++)
             {
-                int count = pairsPerPokemon * 2 + (i < extraPairs ? 2 : 0);
+                int count = cap_moiPokemon * 2 + (i < capNgoaiLe ? 2 : 0);
                 for (int j = 0; j < count; j++)
                 {
-                    imageIndexes.Add(i);
+                    sohieuHinhAnh.Add(i);
                 }
             }
-            while (imageIndexes.Count < totalCells)
-                imageIndexes.Add(0);
+            while (sohieuHinhAnh.Count < tongSoBox)
+                sohieuHinhAnh.Add(0);
 
-            imageIndexes = imageIndexes.OrderBy(x => random.Next()).ToList();
+            sohieuHinhAnh = sohieuHinhAnh.OrderBy(x => random.Next()).ToList();
 
             int index = 0;
-            for (int row = 1; row < rows - 1; row++)
+            for (int hang = 1; hang < hangs - 1; hang++)
             {
-                for (int col = 1; col < cols - 1; col++)
+                for (int cot = 1; cot < cots - 1; cot++)
                 {
-                    int imageIndex = imageIndexes[index++];
-                    PictureBox pictureBox = CreatePictureBox(row, col, size, imageIndex);
+                    int so_HinhAnh = sohieuHinhAnh[index++];
+                    PictureBox pictureBox = TaoPicBox(hang, cot, size, so_HinhAnh);
                     panel.Controls.Add(pictureBox);
                     listPictureBox.Add(pictureBox);
                 }
             }
-            Border(panel, displayMatrix, "up");
-            Border(panel, displayMatrix, "down");
-            Border(panel, displayMatrix, "left");
-            Border(panel, displayMatrix, "right");
+            VienMatran(panel, matranHienThi, "up");
+            VienMatran(panel, matranHienThi, "down");
+            VienMatran(panel, matranHienThi, "left");
+            VienMatran(panel, matranHienThi, "right");
             pathFinder = new PathFinding(listPictureBox);
         }
 
-        public void Border(Panel panel, int[,] displayMatrix, string s)
+        public void VienMatran(Panel panel, int[,] matranHienThi, string s)
         {
-            Size size = new Size(35, 35);
-            int rows = displayMatrix.GetLength(0);
-            int cols = displayMatrix.GetLength(1);
+            Size size = new Size(48, 48);
+            int hangs = matranHienThi.GetLength(0);
+            int cots = matranHienThi.GetLength(1);
 
             int startRow = 0;
-            int endRow = rows;
+            int endRow = hangs;
             int startCol = 0;
-            int endCol = cols;
+            int endCol = cots;
 
             if (s == "up")
             {
@@ -228,19 +215,19 @@ namespace Pikachu_team21
             }
             if (s == "down")
             {
-                startCol = cols - 1;
+                startCol = cots - 1;
             }
             if (s == "left")
             {
                 endRow = 1;
                 startCol = 1;
-                endCol = cols - 1;
+                endCol = cots - 1;
             }
             if (s == "right")
             {
-                startRow = rows - 1;
+                startRow = hangs - 1;
                 startCol = 1;
-                endCol = cols - 1;
+                endCol = cots - 1;
             }
 
             for (int row = startRow; row < endRow; row++)
@@ -261,7 +248,7 @@ namespace Pikachu_team21
                 }
             }
         }
-        private PictureBox CreatePictureBox(int row, int col, Size size, int imageIndex)
+        private PictureBox TaoPicBox(int row, int col, Size size, int imageIndex)
         {
             PictureBox pictureBox = new PictureBox
             {
@@ -276,14 +263,14 @@ namespace Pikachu_team21
             pictureBox.Image = images[imageIndex];
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
 
-            pictureBox.Click += (sender, e) => Event.PictureBox_Click(sender, e);
-            pictureBox.MouseEnter += (sender, e) => Event.PictureBox_MouseEnter(sender, e);
-            pictureBox.MouseLeave += (sender, e) => Event.PictureBox_MouseLeave(sender, e);
+            pictureBox.Click += (sender, e) => SuKien.PictureBox_Click(sender, e);
+            pictureBox.MouseEnter += (sender, e) => SuKien.PictureBox_MouseEnter(sender, e);
+            pictureBox.MouseLeave += (sender, e) => SuKien.PictureBox_MouseLeave(sender, e);
 
             return pictureBox;
         }
 
-        public void Shuffle()
+        public void TronAnh()
         {
             if (listPictureBox.Count == 0)
             {
@@ -291,20 +278,20 @@ namespace Pikachu_team21
                 return;
             }
 
-            List<Image> visibleImages = new List<Image>();
+            List<Image> AnhHien = new List<Image>();
             foreach (var pictureBox in listPictureBox)
             {
                 if (pictureBox.Visible && pictureBox.Image != null)
                 {
-                    visibleImages.Add(pictureBox.Image);
+                    AnhHien.Add(pictureBox.Image);
                 }
             }
 
             Random random = new Random();
-            for (int i = visibleImages.Count - 1; i > 0; i--)
+            for (int i = AnhHien.Count - 1; i > 0; i--)
             {
                 int j = random.Next(i + 1);
-                (visibleImages[i], visibleImages[j]) = (visibleImages[j], visibleImages[i]);
+                (AnhHien[i], AnhHien[j]) = (AnhHien[j], AnhHien[i]);
             }
 
             int index = 0;
@@ -312,12 +299,12 @@ namespace Pikachu_team21
             {
                 if (pictureBox.Visible && pictureBox.Image != null)
                 {
-                    pictureBox.Image = visibleImages[index];
+                    pictureBox.Image = AnhHien[index];
                     index++;
                 }
             }
         }
-        public List<PictureBox> GetPictureBoxes()
+        public List<PictureBox> Get_ListPicbox()
         {
             return listPictureBox;
         }

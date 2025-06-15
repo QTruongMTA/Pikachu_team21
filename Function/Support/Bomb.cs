@@ -16,9 +16,9 @@ namespace Pikachu_team21
             this.gameMatrix = gameMatrix;
         }
 
-        public void ActiveBomb()
+        public void KichHoatBom()
         {
-            var boxes = gameMatrix.GetPictureBoxes()
+            var boxes = gameMatrix.Get_ListPicbox()
                 .Where(pb => pb.Visible && Convert.ToInt32(pb.Tag) == 1)
                 .ToList();
 
@@ -36,11 +36,11 @@ namespace Pikachu_team21
 
                     if (boxes[i].Image == boxes[j].Image)
                     {
-                        var path = gameMatrix.PathConnect(boxes[i].Location, boxes[j].Location);
+                        var path = gameMatrix.DuongNoi(boxes[i].Location, boxes[j].Location);
                         if (path != null && path.Count > 1)
                         {
-                            gameMatrix.RemoveCell(boxes[i]);
-                            gameMatrix.RemoveCell(boxes[j]);
+                            gameMatrix.XoaHinhAnhHople(boxes[i]);
+                            gameMatrix.XoaHinhAnhHople(boxes[j]);
                             removedIndexes.Add(i);
                             removedIndexes.Add(j);
                             pairsRemoved++;
@@ -48,8 +48,8 @@ namespace Pikachu_team21
                         }
                         else
                         {
-                            var suff = new GameRule(gameMatrix);
-                            suff.AutoSuff();
+                            var suff = new LuatChoi(gameMatrix);
+                            suff.TudongTron();
                         }
                     }
                 }

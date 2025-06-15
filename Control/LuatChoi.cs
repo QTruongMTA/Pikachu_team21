@@ -8,18 +8,18 @@ using System.Windows.Forms;
 
 namespace Pikachu_team21
 {
-    class GameRule
+    class LuatChoi
     {
-        private readonly GameMatrix gameMatrix;
+        private readonly GameMatrix matranGame;
 
-        public GameRule(GameMatrix gameMatrix)
+        public LuatChoi(GameMatrix matranGame)
         {
-            this.gameMatrix = gameMatrix;
+            this.matranGame = matranGame;
         }
 
-        public void CheckWin()
+        public void KtraWin()
         {
-            var boxes = gameMatrix.GetPictureBoxes()
+            var boxes = matranGame.Get_ListPicbox()
                 .Where(pb => pb.Visible && Convert.ToInt32(pb.Tag) == 1)
                 .ToList();
 
@@ -28,14 +28,14 @@ namespace Pikachu_team21
                 if (box.Visible) return;
             }
 
-            var over = new frmGameOver();
+            var over = new frmKetThucMan();
             over.ShowDialog();
             frmMain.Instance.Close();
         }
 
-        public bool CheckSuff()
+        public bool KtraTron()
         {
-            var boxes = gameMatrix.GetPictureBoxes()
+            var boxes = matranGame.Get_ListPicbox()
                 .Where(pb => pb.Visible && Convert.ToInt32(pb.Tag) == 1)
                 .ToList();
 
@@ -45,7 +45,7 @@ namespace Pikachu_team21
                 {
                     if (boxes[i].Image == boxes[j].Image)
                     {
-                        var path = gameMatrix.PathConnect(boxes[i].Location, boxes[j].Location);
+                        var path = matranGame.DuongNoi(boxes[i].Location, boxes[j].Location);
                         if (path != null && path.Count > 1)
                         {
                             return true;
@@ -56,11 +56,11 @@ namespace Pikachu_team21
             return false;
         }
 
-        public void AutoSuff() 
+        public void TudongTron() 
         {
-            if (CheckSuff()==false)
+            if (KtraTron()==false)
             {
-                gameMatrix.Shuffle();
+                matranGame.TronAnh();
             }
         }
 

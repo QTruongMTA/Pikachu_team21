@@ -17,6 +17,7 @@ namespace Pikachu_team21
         private static frmSetting _instance;
         private int selectedSoPokemon;
         private int time;
+        private int level;
         public static frmSetting Instance
         {
             get
@@ -39,13 +40,34 @@ namespace Pikachu_team21
         }
         private void btnAccept_Click(object sender, EventArgs e)
         {
+            if (updLevel.SelectedItem == null || updTime.SelectedItem == null || updPokemon.SelectedItem == null || updTurn.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn đầy đủ các tùy chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             MessageBox.Show("Uki bạn nha! Apply liền nè!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             GameMatrix.Instance.SoPokemon = selectedSoPokemon;
             frmMain.Instance.TimeRemain = time;
+            if (level == 1)
+            {
+                frmLevel01 lvform = new frmLevel01();
+                lvform.Show();
+            }
+            else if (level == 2)
+            {
+                level02 lvform = new level02();
+                lvform.Show();
+            }
+            else if (level == 3)
+            {
+                level03 lvform = new level03();
+                lvform.Show();
+            }
 
-            frmMain.Instance.SetData(MatrixGenerator.Instance.CreateDisplayMatrix(9, 16));
-            GameMatrix.Instance.Display(frmMain.Instance.Panel3(), frmMain.Instance.Data());
+            frmMain.Instance.SetData(MaTranGoc.Instance.TaoMatranGoc(8, 12));
+            GameMatrix.Instance.HienThi(frmMain.Instance.Panel3(), frmMain.Instance.Data());
 
             this.Close();
         }
@@ -57,44 +79,41 @@ namespace Pikachu_team21
 
         private void updLevel_SelectedItemChanged(object sender, EventArgs e)
         {
-            /*if (updLevel.SelectedItem.ToString() == "Dễ")
+            if (updLevel.SelectedItem.ToString() == "Dễ")
             {
-                frmLevel01 frmLevel01 = new frmLevel01();
-                frmLevel01.Show();
+                level = 1;
             }
-            if (updLevel.SelectedItem.ToString() == "Trung bình")
+            else if (updLevel.SelectedItem.ToString() == "Trung bình")
             {
-                level02 frmLevel02 = new level02();
-                frmLevel02.Show();
+                level = 2;
             }
-            if (updLevel.SelectedItem.ToString() == "Khó")
+            else if (updLevel.SelectedItem.ToString() == "Khó")
             {
-                level03 frmLevel03 = new level03();
-                frmLevel03.Show();
-            }*/
+                level = 3;
+            }
         }
 
         private void updMusic_SelectedItemChanged(object sender, EventArgs e)
         {
             if (updMusic.SelectedItem.ToString() == "Theme01") 
             {
-                Sound.Instance.PlaySou("TitleSound01");
+                AmThanh.Instance.PlaySou("TitleSound01");
             }
             if (updMusic.SelectedItem.ToString() == "Theme02")
             {
-                Sound.Instance.PlaySou("TitleSound02");
+                AmThanh.Instance.PlaySou("TitleSound02");
             }
             if (updMusic.SelectedItem.ToString() == "Theme03")
             {
-                Sound.Instance.PlaySou("TitleSound03");
+                AmThanh.Instance.PlaySou("TitleSound03");
             }
             if (updMusic.SelectedItem.ToString() == "Theme04")
             {
-                Sound.Instance.PlaySou("TitleSound04");
+                AmThanh.Instance.PlaySou("TitleSound04");
             }
             if (updMusic.SelectedItem.ToString() == "Theme05")
             {
-                Sound.Instance.PlaySou("TitleSound05");
+                AmThanh.Instance.PlaySou("TitleSound05");
             }
         }
 
@@ -134,6 +153,26 @@ namespace Pikachu_team21
         private void lblSetVol_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void updTurn_SelectedItemChanged(object sender, EventArgs e)
+        {
+            if (updTurn.SelectedItem.ToString() == "2")
+            {
+                GameMatrix.Instance.SoLanDoiChieu = 1;
+            }
+            else if (updTurn.SelectedItem.ToString() == "3")
+            {
+                GameMatrix.Instance.SoLanDoiChieu = 2;
+            }
+            else if (updTurn.SelectedItem.ToString() == "4")
+            {
+                GameMatrix.Instance.SoLanDoiChieu = 3;
+            }
+            else if (updTurn.SelectedItem.ToString() == "5")
+            {
+                GameMatrix.Instance.SoLanDoiChieu = 4;
+            }
         }
     }
 }

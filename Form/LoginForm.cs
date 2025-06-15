@@ -14,11 +14,11 @@ using NAudio.Wave;
 
 namespace Pikachu_team21
 {
-    public partial class frmLogin : Form
+    public partial class frmDangNhap : Form
     {
-        Sound sound = Sound.Instance;
+        AmThanh sound = AmThanh.Instance;
 
-        public frmLogin()
+        public frmDangNhap()
         {
             InitializeComponent();
         }
@@ -37,7 +37,7 @@ namespace Pikachu_team21
         private void btnLogin_Click(object sender, EventArgs e)
         {
             
-            Player.Instance.SetName(txtPlayerName.Text);
+            Player.Instance.SetTen(txtPlayerName.Text);
             frmHome home = new frmHome();
             home.UpdateLabel();
             home.Show();

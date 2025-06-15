@@ -35,9 +35,9 @@ namespace Pikachu_team21
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer.Stop();
-            Player.Instance.SetNumLevel(1);
+            Player.Instance.SetCapdo(1);
             frmMain main = new frmMain();
-            main.UpLabel(Player.Instance.NumLevel());
+            main.UpLabel(Player.Instance.Capdo());
             main.SetData(LevelData.Level1.Matrix);
             main.Show();
             this.Close();

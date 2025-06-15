@@ -32,7 +32,7 @@
             this.lblSetLV = new System.Windows.Forms.Label();
             this.lblSetPic = new System.Windows.Forms.Label();
             this.lblSetTime = new System.Windows.Forms.Label();
-            this.lblSetVol = new System.Windows.Forms.Label();
+            this.lblSetTurn = new System.Windows.Forms.Label();
             this.lblSetSound = new System.Windows.Forms.Label();
             this.updTime = new System.Windows.Forms.DomainUpDown();
             this.updMusic = new System.Windows.Forms.DomainUpDown();
@@ -40,7 +40,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.updLevel = new System.Windows.Forms.DomainUpDown();
             this.updPokemon = new System.Windows.Forms.DomainUpDown();
-            this.updVolume = new System.Windows.Forms.DomainUpDown();
+            this.updTurn = new System.Windows.Forms.DomainUpDown();
             this.SuspendLayout();
             // 
             // lblSetLV
@@ -82,19 +82,19 @@
             this.lblSetTime.TabIndex = 7;
             this.lblSetTime.Text = "CHẾ ĐỘ THỜI GIAN";
             // 
-            // lblSetVol
+            // lblSetTurn
             // 
-            this.lblSetVol.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSetVol.AutoSize = true;
-            this.lblSetVol.BackColor = System.Drawing.Color.Transparent;
-            this.lblSetVol.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSetVol.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblSetVol.Location = new System.Drawing.Point(101, 287);
-            this.lblSetVol.Name = "lblSetVol";
-            this.lblSetVol.Size = new System.Drawing.Size(179, 28);
-            this.lblSetVol.TabIndex = 8;
-            this.lblSetVol.Text = "COMING SOON";
-            this.lblSetVol.Click += new System.EventHandler(this.lblSetVol_Click);
+            this.lblSetTurn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSetTurn.AutoSize = true;
+            this.lblSetTurn.BackColor = System.Drawing.Color.Transparent;
+            this.lblSetTurn.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetTurn.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.lblSetTurn.Location = new System.Drawing.Point(101, 287);
+            this.lblSetTurn.Name = "lblSetTurn";
+            this.lblSetTurn.Size = new System.Drawing.Size(254, 28);
+            this.lblSetTurn.TabIndex = 8;
+            this.lblSetTurn.Text = "SỐ ĐOẠN THẲNG NỐI\r\n";
+            this.lblSetTurn.Click += new System.EventHandler(this.lblSetVol_Click);
             // 
             // lblSetSound
             // 
@@ -218,24 +218,25 @@
             this.updPokemon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.updPokemon.SelectedItemChanged += new System.EventHandler(this.updPokemon_SelectedItemChanged);
             // 
-            // updVolume
+            // updTurn
             // 
-            this.updVolume.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.updVolume.AutoSize = true;
-            this.updVolume.BackColor = System.Drawing.Color.LightCyan;
-            this.updVolume.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.updVolume.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updVolume.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.updVolume.Items.Add("Siêu nhỏ");
-            this.updVolume.Items.Add("Đủ nghe");
-            this.updVolume.Items.Add("Đau tai");
-            this.updVolume.Items.Add("Cháy loa");
-            this.updVolume.Location = new System.Drawing.Point(370, 291);
-            this.updVolume.Name = "updVolume";
-            this.updVolume.ReadOnly = true;
-            this.updVolume.Size = new System.Drawing.Size(120, 26);
-            this.updVolume.TabIndex = 16;
-            this.updVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.updTurn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.updTurn.AutoSize = true;
+            this.updTurn.BackColor = System.Drawing.Color.LightCyan;
+            this.updTurn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.updTurn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updTurn.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.updTurn.Items.Add("2");
+            this.updTurn.Items.Add("3");
+            this.updTurn.Items.Add("4");
+            this.updTurn.Items.Add("5");
+            this.updTurn.Location = new System.Drawing.Point(370, 291);
+            this.updTurn.Name = "updTurn";
+            this.updTurn.ReadOnly = true;
+            this.updTurn.Size = new System.Drawing.Size(120, 26);
+            this.updTurn.TabIndex = 16;
+            this.updTurn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.updTurn.SelectedItemChanged += new System.EventHandler(this.updTurn_SelectedItemChanged);
             // 
             // frmSetting
             // 
@@ -247,7 +248,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(590, 556);
-            this.Controls.Add(this.updVolume);
+            this.Controls.Add(this.updTurn);
             this.Controls.Add(this.updPokemon);
             this.Controls.Add(this.updLevel);
             this.Controls.Add(this.btnCancel);
@@ -255,7 +256,7 @@
             this.Controls.Add(this.updMusic);
             this.Controls.Add(this.updTime);
             this.Controls.Add(this.lblSetSound);
-            this.Controls.Add(this.lblSetVol);
+            this.Controls.Add(this.lblSetTurn);
             this.Controls.Add(this.lblSetTime);
             this.Controls.Add(this.lblSetPic);
             this.Controls.Add(this.lblSetLV);
@@ -275,7 +276,7 @@
         private System.Windows.Forms.Label lblSetLV;
         private System.Windows.Forms.Label lblSetPic;
         private System.Windows.Forms.Label lblSetTime;
-        private System.Windows.Forms.Label lblSetVol;
+        private System.Windows.Forms.Label lblSetTurn;
         private System.Windows.Forms.Label lblSetSound;
         private System.Windows.Forms.DomainUpDown updTime;
         private System.Windows.Forms.DomainUpDown updMusic;
@@ -283,6 +284,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DomainUpDown updLevel;
         private System.Windows.Forms.DomainUpDown updPokemon;
-        private System.Windows.Forms.DomainUpDown updVolume;
+        private System.Windows.Forms.DomainUpDown updTurn;
     }
 }

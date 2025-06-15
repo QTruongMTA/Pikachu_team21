@@ -1,6 +1,6 @@
 ﻿namespace Pikachu_team21
 {
-    partial class frmGuide
+    partial class frmHuongDan
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGuide));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHuongDan));
             this.btnOke = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 

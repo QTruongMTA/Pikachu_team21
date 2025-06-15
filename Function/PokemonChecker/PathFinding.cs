@@ -39,7 +39,7 @@ namespace Pikachu_team21
                     continue;
                 }
 
-                foreach (var (dRow, dCol) in new (int, int)[] { (-35, 0), (35, 0), (0, -35), (0, 35) })
+                foreach (var (dRow, dCol) in new (int, int)[] { (-48, 0), (48, 0), (0, -48), (0, 48) })
                 {
                     Point neighbor = new Point(current.X + dRow, current.Y + dCol);
                     if (!cellMap.ContainsKey(neighbor)) continue;

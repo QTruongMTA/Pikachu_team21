@@ -6,41 +6,41 @@ using NAudio.Wave;
 
 namespace Pikachu_team21
 {
-    class Sound
+    class AmThanh
     {
-        private static Sound _instance;
-        private SoundPlayer backgroundPlayer;
+        private static AmThanh _instance;
+        private SoundPlayer amNen;
         private bool isPlaying = false;
 
         public bool IsPlaying() { return isPlaying; }
-        public static Sound Instance => _instance ?? (_instance = new Sound());
+        public static AmThanh Instance => _instance ?? (_instance = new AmThanh());
 
-        private Sound() { }
+        private AmThanh() { }
 
-        public void PlaySou(string resourceName)
+        public void PlaySou(string tenAmthanh)
         {
             StopSou();
-            var resource = Properties.Resources.ResourceManager.GetObject(resourceName);
+            var resource = Properties.Resources.ResourceManager.GetObject(tenAmthanh);
 
             if (resource is byte[] byteArray)
             {
                 using (var stream = new MemoryStream(byteArray))
                 {
-                    backgroundPlayer = new SoundPlayer(stream);
-                    backgroundPlayer.PlayLooping();
+                    amNen = new SoundPlayer(stream);
+                    amNen.PlayLooping();
                     isPlaying = true;
                 }
             }
             else
             {
-                MessageBox.Show($"Resource '{resourceName}' không phải âm thanh hợp lệ, kiểm tra lại địnhu dạng file trong resources!");
+                MessageBox.Show($"Resource '{tenAmthanh}' không phải âm thanh hợp lệ, kiểm tra lại địnhu dạng file trong resources!");
             }
         }
 
         public void StopSou()
         {
-            backgroundPlayer?.Stop();
-            backgroundPlayer = null;
+            amNen?.Stop();
+            amNen = null;
             isPlaying = false;
         }
 
@@ -52,8 +52,8 @@ namespace Pikachu_team21
             {
                 using (var stream = new MemoryStream(byteArray))
                 {
-                    backgroundPlayer = new SoundPlayer(stream);
-                    backgroundPlayer.Play();
+                    amNen = new SoundPlayer(stream);
+                    amNen.Play();
                     isPlaying = true;
                 }
             }

@@ -18,7 +18,7 @@ namespace Pikachu_team21
         }
         public void UpdateLabel()
         {
-            string text = Player.Instance.Name();
+            string text = Player.Instance.Ten();
             if (text == "") text = "NONAME";
             lblWelcome.Text = "CHIẾN THÔI\n" + text + " CUTE ƠI!!!";
         }
@@ -46,51 +46,41 @@ namespace Pikachu_team21
 
         private void btnGuide_Click(object sender, EventArgs e)
         {
-            frmGuide frmGuide = new frmGuide();
+            frmHuongDan frmGuide = new frmHuongDan();
             frmGuide.Show();
             this.Close();
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            var state = GameStates.Instance.LoadGame(Player.Instance.Name());
-            if (string.IsNullOrEmpty(state.name))
+            var state = TrangThai.Instance.LoadGame(Player.Instance.Ten());
+            if (state.stateList == null)
             {
                 MessageBox.Show("Không có trạng thái game cũ để tiếp tục!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            frmMain mainForm = new frmMain();
+            frmMain.Instance.Is_Tailai = true; // Đánh dấu là đang load trạng thái
 
-            mainForm.Score = state.score;
-            Player.Instance.SetNumLevel(state.level);
-            mainForm.TimeRemain = state.timeRemain;
+            frmMain.Instance.SetData(MaTranGoc.Instance.TaoMatranGoc(8, 12));
+            GameMatrix.Instance.HienThi(frmMain.Instance.Panel3(), frmMain.Instance.Data());
 
-            mainForm.SetData(MatrixGenerator.Instance.CreateDisplayMatrix(state.rows, state.cols));
-            GameMatrix.Instance.Display(mainForm.Panel3(), mainForm.Data());
-
-            List<PictureBox> playCells = GameMatrix.Instance.GetPictureBoxes();
-            var cellStates = state.cellStates;
-
-            if (playCells.Count != cellStates.Count)
+            var picBoxes = GameMatrix.Instance.Get_ListPicbox();
+            for (int i = 0; i < state.stateList.Count && i < picBoxes.Count; i++)
             {
-                MessageBox.Show("Dữ liệu lưu và số lượng ô hiện tại không khớp!\nKhông thể tiếp tục game.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                int visible = (int)state.stateList[i];
+                picBoxes[i].Visible = (visible == 1);
+                picBoxes[i].Tag = visible;
             }
 
-            for (int i = 0; i < playCells.Count; i++)
-            {
-                var pb = playCells[i];
-                var cell = cellStates[i];
-                pb.Visible = cell.visible;
-                pb.Tag = cell.visible ? 1 : 0;
-                pb.Image = GameMatrix.Instance.GetImageByIndex(cell.imageIndex);
-            }
+            frmMain.Instance.Score = state.diem;
+            Player.Instance.SetCapdo(state.capDo);
+            frmMain.Instance.TimeRemain = state.thoiGianCon;
+            Player.Instance.SetTen(state.ten);
+            frmMain.Instance.UpLabel(state.capDo);
 
-            mainForm.UpLabel(Player.Instance.NumLevel());
-
-            mainForm.Show();
-            this.Hide();
+            frmMain.Instance.Show();
+            this.Close();
         }
 
         private void btnTop_Click(object sender, EventArgs e)

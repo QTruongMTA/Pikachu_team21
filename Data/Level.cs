@@ -9,42 +9,42 @@ namespace Pikachu_team21
 {
     class LevelData
     {
-        int[,] matrix;
+        int[,] matranHien;
         int soPic;
-        long baseTime;
+        long tongThoigian;
         public LevelData(int[,] matrix, int soPic, long baseTime)
         {
-            this.matrix = matrix;
+            this.matranHien = matrix;
             this.soPic = soPic;
-            this.baseTime = baseTime;
+            this.tongThoigian = baseTime;
         }
         public int[,] Matrix
         {
-            get { return matrix; }
-            set { matrix = value; }
+            get { return matranHien; }
+            set { matranHien = value; }
         }
         public int SoPic
         {
             get { return soPic; }
             set { soPic = value; }
         }
-        public long BaseTime
+        public long TongThoigian
         {
-            get { return baseTime; }
-            set { baseTime = value; }
+            get { return tongThoigian; }
+            set { tongThoigian = value; }
         }
 
-        private static LevelData level1 = new LevelData(MatrixGenerator.Instance.CreateDisplayMatrix(9, 16), 36, 500);
+        private static LevelData level1 = new LevelData(MaTranGoc.Instance.TaoMatranGoc(8, 12), 20, 400);
         public static LevelData Level1
         {
             get { return level1; }
         }
-        private static LevelData level2 = new LevelData(MatrixGenerator.Instance.CreateDisplayMatrix(12, 16), 36, 500);
+        private static LevelData level2 = new LevelData(MaTranGoc.Instance.TaoMatranGoc(8, 12), 24, 500);
         public static LevelData Level2
         {
             get { return level2; }
         }
-        private static LevelData level3 = new LevelData(MatrixGenerator.Instance.CreateDisplayMatrix(9, 16), 47, 300);
+        private static LevelData level3 = new LevelData(MaTranGoc.Instance.TaoMatranGoc(8, 12), 24, 250);
         public static LevelData Level3
         {
             get { return level3; }
@@ -55,7 +55,7 @@ namespace Pikachu_team21
         {
             get
             {
-                switch (Player.Instance.NumLevel())
+                switch (Player.Instance.Capdo())
                 {
                     case 1:
                         _instance = level1;
@@ -67,7 +67,7 @@ namespace Pikachu_team21
                         _instance = level3;
                         break;
                     default:
-                        _instance = new LevelData(MatrixGenerator.Instance.CreateDisplayMatrix(9, 16), 36, 500);
+                        _instance = new LevelData(MaTranGoc.Instance.TaoMatranGoc(8, 12), 24, 400);
                         break;
                 }
                 return _instance;

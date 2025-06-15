@@ -20,51 +20,46 @@ namespace Pikachu_team21
             }
         }
 
-        private string name;
+        private string ten;
 
-        private long score;
+        private long diem;
 
-        private long time;
+        private long thoigian;
 
-        private int numLevel;
+        private int capdo;
 
-        public string Name()
+        public string Ten()
         {
-            return Instance.name;
+            return Instance.ten;
         }
-        public long Score()
+        public long Diem()
         {
-            return Instance.score;
+            return Instance.diem;
         }
-        public long Time()
+        public long Thoigian()
         {
-            return Instance.time;
+            return Instance.thoigian;
         }
-        public int NumLevel()
+        public int Capdo()
         {
-            return Instance.numLevel;
-        }
-
-        public void SetName(string name)
-        {
-            Instance.name = name;
-        }
-        public void SetScore(long score)
-        {
-            Instance.score = score;
-        }
-        public void  SetTime(long time)
-        {
-            Instance.time = time;
-        }
-        public void  SetNumLevel(int num)
-        {
-            Instance.numLevel = num;
+            return Instance.capdo;
         }
 
-        internal void SavePlayer(object name, object score, object numLevel)
+        public void SetTen(string ten)
         {
-            throw new NotImplementedException();
+            Instance.ten = ten;
+        }
+        public void SetDiem(long diem)
+        {
+            Instance.diem = diem;
+        }
+        public void  SetThoigian(long thoigian)
+        {
+            Instance.thoigian = thoigian;
+        }
+        public void  SetCapdo(int capdo)
+        {
+            Instance.capdo = capdo;
         }
     }
 }

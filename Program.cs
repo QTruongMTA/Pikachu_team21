@@ -20,7 +20,7 @@ namespace Pikachu_team21
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new frmDangNhap());
             CreateShortcut();
         }
 

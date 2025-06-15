@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Pikachu_team21
 {
-    class Event
+    class SuKien
     {
-        public static Selected selected = new Selected();
-        public static GameRule gameRule = new GameRule(GameMatrix.Instance);
+        public static Chon chon = new Chon();
+        public static LuatChoi luat = new LuatChoi(GameMatrix.Instance);
 
         public static EventHandler PictureBox_Click => (sender, e) =>
         {
@@ -22,11 +22,11 @@ namespace Pikachu_team21
                 
                 pictureBox.BackColor = Color.Red;
                 pictureBox.BorderStyle = BorderStyle.Fixed3D;
-                selected.SetSelection(pictureBox);
-                if (selected.Correct == true)
+                chon.LuaChon(pictureBox);
+                if (chon.Hople == true)
                 {
-                    frmMain.Instance.ScoreUp();
-                    selected.inCorrect();
+                    frmMain.Instance.CongDiem();
+                    chon.KhongHople();
                 }
             }
         };
@@ -35,8 +35,8 @@ namespace Pikachu_team21
         {
             if (sender is PictureBox pictureBox)
             {
-                if ((selected.IsSelected1 && ReferenceEquals(pictureBox, selected.Selection1)) ||
-                    (selected.IsSelected2 && ReferenceEquals(pictureBox, selected.Selection2)))
+                if ((chon.Is_chon1 && ReferenceEquals(pictureBox, chon.Chon1)) ||
+                    (chon.Is_chon2 && ReferenceEquals(pictureBox, chon.Chon2)))
                 {
                     return;
                 }
@@ -49,8 +49,8 @@ namespace Pikachu_team21
         {
             if (sender is PictureBox pictureBox)
             {
-                if ((selected.IsSelected1 && ReferenceEquals(pictureBox, selected.Selection1)) ||
-                    (selected.IsSelected2 && ReferenceEquals(pictureBox, selected.Selection2)))
+                if ((chon.Is_chon1 && ReferenceEquals(pictureBox, chon.Chon1)) ||
+                    (chon.Is_chon2 && ReferenceEquals(pictureBox, chon.Chon2)))
                 {
                     return;
                 }

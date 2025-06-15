@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Pikachu_team21
 {
-    public partial class frmGameOver: Form
+    public partial class frmKetThucMan: Form
     {
-        public frmGameOver()
+        public frmKetThucMan()
         {
             InitializeComponent();
         }
@@ -24,22 +24,22 @@ namespace Pikachu_team21
 
         public void UpdateLabel1()
         {
-            if (Player.Instance.Time() > 0)
+            if (Player.Instance.Thoigian() > 0)
             {
-                label1.Text = "YOU WIN";
+                label1.Text = "XUAT SAC!!!";
             }
             else
             {
-                label1.Text = "GAME OVER";
+                label1.Text = "CO GANG LAN SAU NHA!!!";
             }
         }
 
         public void UpdateLabel2()
         {
-            label2.Text = $"Name: {Player.Instance.Name()}\n" +
-                          $"Level: {Player.Instance.NumLevel()}\n" +
-                          $"Score: {Player.Instance.Score()}\n" +
-                          $"Time: {Player.Instance.Time()}s"
+            label2.Text = $"Ten: {Player.Instance.Ten()}\n" +
+                          $"Cap Do: {Player.Instance.Capdo()}\n" +
+                          $"So Diem: {Player.Instance.Diem()}\n" +
+                          $"Thoi Gian: {Player.Instance.Thoigian()}s"
                           ;
         }
         private void frmGameOver_Load(object sender, EventArgs e)

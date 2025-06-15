@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Pikachu_team21
 {
-    public partial class frmGuide: Form
+    public partial class frmHuongDan: Form
     {
-        public frmGuide()
+        public frmHuongDan()
         {
             InitializeComponent();
         }

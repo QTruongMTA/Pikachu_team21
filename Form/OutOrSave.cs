@@ -25,27 +25,17 @@ namespace Pikachu_team21
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            try
-            {
-                List<PictureBox> playCells = GameMatrix.Instance.GetPictureBoxes();
-               
-                GameStates.Instance.SaveGame(
-                    Player.Instance.Name(),
-                    Player.Instance.Score(),
-                    Player.Instance.NumLevel(),
-                    frmMain.Instance.TimeRemain,
-                    frmMain.Instance.Data(),
-                    playCells
-                );
+            var picBoxes = GameMatrix.Instance.Get_ListPicbox();
+            TrangThai.Instance.SaveGame(
+                Player.Instance.Ten(),
+                frmMain.Instance.Score,
+                Player.Instance.Capdo(),
+                frmMain.Instance.TimeRemain,
+                picBoxes
+            );
 
-                MessageBox.Show("Lưu game thành công!", "Lưu Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi lưu game: " + ex.Message, "Lưu Game", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            //MessageBox.Show("Tau nhớ mi rùi nha!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            frmOut frmOut = new frmOut();
+            MessageBox.Show("Đã lưu thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            frmDongGame frmOut = new frmDongGame();
             frmOut.Show();
             this.Close();
         }
@@ -55,7 +45,7 @@ namespace Pikachu_team21
             DialogResult cl = MessageBox.Show("Lần sau chơi lại là phải chơi từ đầu đó!!!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (cl == DialogResult.OK) 
             {
-                frmOut frmOut = new frmOut();
+                frmDongGame frmOut = new frmDongGame();
                 frmOut.Show();
                 this.Close();
             }

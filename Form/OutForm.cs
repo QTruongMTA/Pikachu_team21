@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Pikachu_team21
 {
-    public partial class frmOut: Form
+    public partial class frmDongGame: Form
     {
 
-        public frmOut()
+        public frmDongGame()
         {
             InitializeComponent();
         }

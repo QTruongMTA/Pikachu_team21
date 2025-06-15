@@ -23,7 +23,7 @@ namespace Pikachu_team21
         /// <param name="overlayPanel">Panel dùng để vẽ đường đi gợi ý (ví dụ: panel4).</param>
         public bool ShowHint(Panel overlayPanel)
         {
-            var boxes = gameMatrix.GetPictureBoxes()
+            var boxes = gameMatrix.Get_ListPicbox()
                 .Where(pb => pb.Visible && Convert.ToInt32(pb.Tag) == 1)
                 .ToList();
 
@@ -33,7 +33,7 @@ namespace Pikachu_team21
                 {
                     if (boxes[i].Image == boxes[j].Image)
                     {
-                        var path = gameMatrix.PathConnect(boxes[i].Location, boxes[j].Location);
+                        var path = gameMatrix.DuongNoi(boxes[i].Location, boxes[j].Location);
                         if (path != null && path.Count > 1)
                         {
                             //Point p1 = (Point)boxes[i].Tag;
