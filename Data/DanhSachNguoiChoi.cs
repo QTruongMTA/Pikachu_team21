@@ -41,18 +41,19 @@ namespace Pikachu_team21
 
         public static List<Player> GetTop3(List<Player> allPlayers)
         {
-            var topPlayers = allPlayers
+            // Lấy bản ghi tốt nhất của mỗi người chơi
+            var bestOfEach = allPlayers
                 .GroupBy(p => p.Ten())
-                .Select(g =>
-                {
-                    var best = g
-                        .OrderByDescending(p => p.Diem())
-                        .ThenBy(p => p.Thoigian())
-                        .First();
-                    return best;
-                })
+                .Select(g => g
+                    .OrderByDescending(p => p.Diem())
+                    .ThenByDescending(p => p.Thoigian()) // Thời gian còn lại nhiều hơn thì xếp trên
+                    .First())
+                .ToList();
+
+            // Sắp xếp lại toàn bộ danh sách này theo điểm giảm dần, thời gian còn lại giảm dần
+            var topPlayers = bestOfEach
                 .OrderByDescending(p => p.Diem())
-                .ThenBy(p => p.Thoigian())
+                .ThenByDescending(p => p.Thoigian())
                 .Take(3)
                 .ToList();
 

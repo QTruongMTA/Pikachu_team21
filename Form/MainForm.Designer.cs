@@ -35,12 +35,14 @@
             this.lblCapdo = new System.Windows.Forms.Label();
             this.lblTen = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.lblDemHint = new System.Windows.Forms.Label();
+            this.lblDem = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnHint = new System.Windows.Forms.Button();
             this.btnSuffle = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnOut = new System.Windows.Forms.Button();
+            this.lblDemBomb = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -115,7 +117,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.lblDemHint);
+            this.panel1.Controls.Add(this.lblDem);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnHint);
             this.panel1.Controls.Add(this.btnSuffle);
@@ -125,18 +128,25 @@
             this.panel1.Size = new System.Drawing.Size(107, 496);
             this.panel1.TabIndex = 1;
             // 
-            // button3
+            // lblDemHint
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.button3.BackgroundImage = global::Pikachu_team21.Properties.Resources.pause_button;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(31, 352);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(45, 45);
-            this.button3.TabIndex = 12;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.lblDemHint.AutoSize = true;
+            this.lblDemHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDemHint.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblDemHint.Location = new System.Drawing.Point(62, 329);
+            this.lblDemHint.Name = "lblDemHint";
+            this.lblDemHint.Size = new System.Drawing.Size(0, 29);
+            this.lblDemHint.TabIndex = 14;
+            // 
+            // lblDem
+            // 
+            this.lblDem.AutoSize = true;
+            this.lblDem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDem.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblDem.Location = new System.Drawing.Point(62, 223);
+            this.lblDem.Name = "lblDem";
+            this.lblDem.Size = new System.Drawing.Size(0, 29);
+            this.lblDem.TabIndex = 13;
             // 
             // button1
             // 
@@ -144,7 +154,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.button1.BackgroundImage = global::Pikachu_team21.Properties.Resources.menu;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(31, 16);
+            this.button1.Location = new System.Drawing.Point(31, 111);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 45);
             this.button1.TabIndex = 11;
@@ -157,7 +167,7 @@
             this.btnHint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnHint.BackgroundImage = global::Pikachu_team21.Properties.Resources.bulb;
             this.btnHint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHint.Location = new System.Drawing.Point(31, 246);
+            this.btnHint.Location = new System.Drawing.Point(31, 341);
             this.btnHint.Name = "btnHint";
             this.btnHint.Size = new System.Drawing.Size(45, 45);
             this.btnHint.TabIndex = 10;
@@ -168,20 +178,34 @@
             // 
             this.btnSuffle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSuffle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnSuffle.BackgroundImage = global::Pikachu_team21.Properties.Resources.reset__1_;
+            this.btnSuffle.BackgroundImage = global::Pikachu_team21.Properties.Resources.refresh;
             this.btnSuffle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSuffle.Location = new System.Drawing.Point(31, 138);
+            this.btnSuffle.Location = new System.Drawing.Point(31, 233);
             this.btnSuffle.Name = "btnSuffle";
             this.btnSuffle.Size = new System.Drawing.Size(45, 45);
             this.btnSuffle.TabIndex = 9;
             this.btnSuffle.UseVisualStyleBackColor = false;
             this.btnSuffle.Click += new System.EventHandler(this.btnRepeat_Click);
             // 
+            // button3
+            // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.button3.BackgroundImage = global::Pikachu_team21.Properties.Resources.pause_button;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Location = new System.Drawing.Point(31, 341);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(45, 45);
+            this.button3.TabIndex = 12;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.btnOut);
+            this.panel2.Controls.Add(this.lblDemBomb);
             this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.btnReset);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(789, 63);
@@ -189,18 +213,15 @@
             this.panel2.Size = new System.Drawing.Size(107, 496);
             this.panel2.TabIndex = 2;
             // 
-            // btnOut
+            // lblDemBomb
             // 
-            this.btnOut.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnOut.BackgroundImage = global::Pikachu_team21.Properties.Resources.exit;
-            this.btnOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOut.Location = new System.Drawing.Point(31, 246);
-            this.btnOut.Name = "btnOut";
-            this.btnOut.Size = new System.Drawing.Size(45, 45);
-            this.btnOut.TabIndex = 13;
-            this.btnOut.UseVisualStyleBackColor = false;
-            this.btnOut.Click += new System.EventHandler(this.btnOut_Click);
+            this.lblDemBomb.AutoSize = true;
+            this.lblDemBomb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDemBomb.ForeColor = System.Drawing.Color.Red;
+            this.lblDemBomb.Location = new System.Drawing.Point(65, 223);
+            this.lblDemBomb.Name = "lblDemBomb";
+            this.lblDemBomb.Size = new System.Drawing.Size(0, 29);
+            this.lblDemBomb.TabIndex = 14;
             // 
             // button2
             // 
@@ -208,7 +229,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.button2.BackgroundImage = global::Pikachu_team21.Properties.Resources.wave_sound;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(31, 16);
+            this.button2.Location = new System.Drawing.Point(31, 111);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(45, 45);
             this.button2.TabIndex = 12;
@@ -221,7 +242,7 @@
             this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnReset.BackgroundImage = global::Pikachu_team21.Properties.Resources.bomb;
             this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReset.Location = new System.Drawing.Point(31, 138);
+            this.btnReset.Location = new System.Drawing.Point(31, 233);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(45, 45);
             this.btnReset.TabIndex = 10;
@@ -265,7 +286,9 @@
             this.pnIn4.ResumeLayout(false);
             this.pnIn4.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -285,9 +308,11 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnOut;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblDem;
+        private System.Windows.Forms.Label lblDemBomb;
+        private System.Windows.Forms.Label lblDemHint;
     }
 }

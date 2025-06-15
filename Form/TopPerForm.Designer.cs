@@ -45,9 +45,9 @@
             this.button1.BackgroundImage = global::Pikachu_team21.Properties.Resources.positive_vote;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.button1.Location = new System.Drawing.Point(580, 605);
+            this.button1.Location = new System.Drawing.Point(414, 485);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 70);
+            this.button1.Size = new System.Drawing.Size(45, 45);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -59,7 +59,7 @@
             this.lblTop1.Font = new System.Drawing.Font("Stencil", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTop1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.lblTop1.Image = global::Pikachu_team21.Properties.Resources.gold_medal;
-            this.lblTop1.Location = new System.Drawing.Point(515, 66);
+            this.lblTop1.Location = new System.Drawing.Point(349, -54);
             this.lblTop1.Name = "lblTop1";
             this.lblTop1.Size = new System.Drawing.Size(200, 200);
             this.lblTop1.TabIndex = 14;
@@ -72,7 +72,7 @@
             this.lblTop3.Font = new System.Drawing.Font("Stencil", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTop3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.lblTop3.Image = global::Pikachu_team21.Properties.Resources.bronze_medal;
-            this.lblTop3.Location = new System.Drawing.Point(150, 191);
+            this.lblTop3.Location = new System.Drawing.Point(-16, 71);
             this.lblTop3.Name = "lblTop3";
             this.lblTop3.Size = new System.Drawing.Size(200, 200);
             this.lblTop3.TabIndex = 15;
@@ -85,7 +85,7 @@
             this.lblTop2.Font = new System.Drawing.Font("Stencil", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTop2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.lblTop2.Image = global::Pikachu_team21.Properties.Resources.silver_medal;
-            this.lblTop2.Location = new System.Drawing.Point(880, 191);
+            this.lblTop2.Location = new System.Drawing.Point(714, 71);
             this.lblTop2.Name = "lblTop2";
             this.lblTop2.Size = new System.Drawing.Size(200, 200);
             this.lblTop2.TabIndex = 16;
@@ -96,7 +96,7 @@
             this.lblTop1Text.BackColor = System.Drawing.Color.Transparent;
             this.lblTop1Text.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTop1Text.ForeColor = System.Drawing.Color.Red;
-            this.lblTop1Text.Location = new System.Drawing.Point(530, 301);
+            this.lblTop1Text.Location = new System.Drawing.Point(360, 177);
             this.lblTop1Text.Name = "lblTop1Text";
             this.lblTop1Text.Size = new System.Drawing.Size(185, 145);
             this.lblTop1Text.TabIndex = 17;
@@ -106,7 +106,7 @@
             this.lblTop2Text.BackColor = System.Drawing.Color.Transparent;
             this.lblTop2Text.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTop2Text.ForeColor = System.Drawing.Color.Red;
-            this.lblTop2Text.Location = new System.Drawing.Point(895, 402);
+            this.lblTop2Text.Location = new System.Drawing.Point(725, 283);
             this.lblTop2Text.Name = "lblTop2Text";
             this.lblTop2Text.Size = new System.Drawing.Size(185, 145);
             this.lblTop2Text.TabIndex = 18;
@@ -116,18 +116,17 @@
             this.lblTop3Text.BackColor = System.Drawing.Color.Transparent;
             this.lblTop3Text.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTop3Text.ForeColor = System.Drawing.Color.Red;
-            this.lblTop3Text.Location = new System.Drawing.Point(161, 402);
+            this.lblTop3Text.Location = new System.Drawing.Point(-1, 311);
             this.lblTop3Text.Name = "lblTop3Text";
             this.lblTop3Text.Size = new System.Drawing.Size(185, 145);
             this.lblTop3Text.TabIndex = 19;
             // 
             // frmTop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::Pikachu_team21.Properties.Resources.snapedit_1741542181651;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1230, 804);
+            this.ClientSize = new System.Drawing.Size(896, 559);
             this.Controls.Add(this.lblTop3Text);
             this.Controls.Add(this.lblTop2Text);
             this.Controls.Add(this.lblTop1Text);

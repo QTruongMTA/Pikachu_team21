@@ -25,8 +25,56 @@ namespace Pikachu_team21
         private Timer gameTimer;
         private long score = 0;
         private bool is_Tailai = false;
-        //private bool isLoadingSavedState = false;
+        private int demBomb;
+        private int dem;
+        private int demHint;
 
+        public Button BtnSuffle
+        {
+            get { return btnSuffle; }
+            set { btnSuffle = value; }
+        }
+        public Button BtnHint
+        {
+            get { return btnHint; }
+            set { btnHint = value; }
+        }
+        public Button BtnReset
+        {
+            get { return btnReset; }
+            set { btnReset = value; }
+        }
+        public Button Button1
+        {
+            get { return button1; }
+            set { button1 = value; }
+        }
+        public Button Button2
+        {
+            get { return button2; }
+            set { button2 = value; }
+        }
+        public Timer GameTimer
+        {
+            get { return gameTimer; }
+            set { gameTimer = value; }
+        }
+        public int DemHint
+        {
+            get { return demHint; }
+            set { demHint = value; }
+        }
+        public int DemBomb
+        {
+            get { return demBomb; }
+            set { demBomb = value; }
+        }
+
+        public int Dem
+        {
+            get { return dem; }
+            set { dem = value; }
+        }
         public bool Is_Tailai
         {
             get { return is_Tailai; }
@@ -126,20 +174,28 @@ namespace Pikachu_team21
                 }
                 gameMatrix.HienThi(panel3, Data());
             }
+
             switch (Player.Instance.Capdo())
             {
                 case 1:
                     TimeRemain = LevelData.Level1.TongThoigian;
+                    LuatChoi.Instance.SetDemChung(8, 3, 5);
                     break;
                 case 2:
                     TimeRemain = LevelData.Level2.TongThoigian;
+                    LuatChoi.Instance.SetDemChung(5, 2, 4);
                     break;
                 case 3:
                     TimeRemain = LevelData.Level3.TongThoigian;
+                    LuatChoi.Instance.SetDemChung(8, 1, 3);
                     break;
                 default:
                     break;
             }
+
+            lblDemBomb.Text = $"{demBomb}";
+            lblDem.Text = $"{dem}";
+            lblDemHint.Text = $"{demHint}";
 
             Instance.lblDiem.Text = $"Diem: {score}";
 
@@ -167,15 +223,9 @@ namespace Pikachu_team21
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmSetting setting = new frmSetting();
-            setting.ShowDialog();
-        }
-
-        private void btnOut_Click(object sender, EventArgs e)
-        {
-            frmOutSave outSave = new frmOutSave();
-            outSave.ShowDialog();
-            this.Close();
+            frmMenuCaidat menuCaidat = new frmMenuCaidat();
+            menuCaidat.Show();
+            this.Hide();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -191,7 +241,7 @@ namespace Pikachu_team21
 
         private void btnRepeat_Click(object sender, EventArgs e)
         {
-            gameMatrix.TronAnh();
+            if (dem !=0) { gameMatrix.TronAnh(); dem--; lblDem.Text = $"{dem}"; }
         }
 
 
@@ -214,14 +264,25 @@ namespace Pikachu_team21
 
         private void btnHint_Click(object sender, EventArgs e)
         {
-            var hint = new Hint(GameMatrix.Instance);
-            hint.ShowHint(frmMain.Instance.Panel4());
+            if (demHint != 0) 
+            {
+                var hint = new Hint(GameMatrix.Instance);
+                hint.ShowHint(frmMain.Instance.Panel4());
+                demHint--;
+                lblDemHint.Text = $"{demHint}";
+            }
+            
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            var bomb = new Bomb(GameMatrix.Instance);
-            bomb.KichHoatBom();
+            if (demBomb != 0) 
+            {
+                var bomb = new Bomb(GameMatrix.Instance);
+                bomb.KichHoatBom();
+                demBomb--;
+                lblDemBomb.Text = $"{demBomb}";
+            }
 
         }
 
@@ -258,9 +319,20 @@ namespace Pikachu_team21
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
             gameTimer.Stop();
-            MessageBox.Show("Dang tam dung!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            foreach (Control c in panel3.Controls)
+            {
+                if (c is PictureBox)
+                    c.Enabled = false;
+            }
+            btnSuffle.Enabled = false;
+            btnHint.Enabled = false;
+            btnReset.Enabled = false;
+            button1.Enabled = false;
+            button2.Enabled = false;
+
+            frmTamDung tamDung = new frmTamDung();
+            tamDung.ShowDialog();
         }
     }
 }

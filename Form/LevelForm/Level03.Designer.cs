@@ -31,17 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(level03));
             this.pnLevel3 = new System.Windows.Forms.Panel();
             this.lblLevel = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pnLevel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnLevel3
             // 
             this.pnLevel3.BackColor = System.Drawing.Color.Transparent;
+            this.pnLevel3.Controls.Add(this.progressBar1);
             this.pnLevel3.Controls.Add(this.lblLevel);
             this.pnLevel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnLevel3.Location = new System.Drawing.Point(0, 0);
             this.pnLevel3.Name = "pnLevel3";
-            this.pnLevel3.Size = new System.Drawing.Size(1230, 804);
+            this.pnLevel3.Size = new System.Drawing.Size(896, 559);
             this.pnLevel3.TabIndex = 0;
             // 
             // lblLevel
@@ -50,23 +52,28 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLevel.BackColor = System.Drawing.Color.Transparent;
-            this.lblLevel.Font = new System.Drawing.Font("Stencil", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevel.Font = new System.Drawing.Font("Stencil", 42F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblLevel.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblLevel.Image = ((System.Drawing.Image)(resources.GetObject("lblLevel.Image")));
-            this.lblLevel.Location = new System.Drawing.Point(404, 168);
+            this.lblLevel.Location = new System.Drawing.Point(242, 178);
             this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(421, 448);
+            this.lblLevel.Size = new System.Drawing.Size(413, 203);
             this.lblLevel.TabIndex = 16;
-            this.lblLevel.Text = "Lv3";
+            this.lblLevel.Text = "LEVEL 3";
             this.lblLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(193, 433);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(522, 12);
+            this.progressBar1.TabIndex = 19;
             // 
             // level03
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1230, 804);
+            this.ClientSize = new System.Drawing.Size(896, 559);
             this.Controls.Add(this.pnLevel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "level03";
@@ -82,5 +89,6 @@
 
         private System.Windows.Forms.Panel pnLevel3;
         private System.Windows.Forms.Label lblLevel;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

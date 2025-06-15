@@ -45,9 +45,9 @@
             this.btnGuide.BackgroundImage = global::Pikachu_team21.Properties.Resources.information;
             this.btnGuide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGuide.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnGuide.Location = new System.Drawing.Point(179, 615);
+            this.btnGuide.Location = new System.Drawing.Point(101, 452);
             this.btnGuide.Name = "btnGuide";
-            this.btnGuide.Size = new System.Drawing.Size(70, 70);
+            this.btnGuide.Size = new System.Drawing.Size(45, 45);
             this.btnGuide.TabIndex = 0;
             this.btnGuide.UseVisualStyleBackColor = false;
             this.btnGuide.Click += new System.EventHandler(this.btnGuide_Click);
@@ -59,9 +59,9 @@
             this.btnContinue.BackgroundImage = global::Pikachu_team21.Properties.Resources.play__1_;
             this.btnContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnContinue.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnContinue.Location = new System.Drawing.Point(445, 531);
+            this.btnContinue.Location = new System.Drawing.Point(289, 368);
             this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(70, 70);
+            this.btnContinue.Size = new System.Drawing.Size(45, 45);
             this.btnContinue.TabIndex = 1;
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
@@ -73,9 +73,9 @@
             this.btnOut.BackgroundImage = global::Pikachu_team21.Properties.Resources.exit;
             this.btnOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOut.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnOut.Location = new System.Drawing.Point(981, 615);
+            this.btnOut.Location = new System.Drawing.Point(751, 452);
             this.btnOut.Name = "btnOut";
-            this.btnOut.Size = new System.Drawing.Size(70, 70);
+            this.btnOut.Size = new System.Drawing.Size(45, 45);
             this.btnOut.TabIndex = 3;
             this.btnOut.UseVisualStyleBackColor = false;
             this.btnOut.Click += new System.EventHandler(this.btnOut_Click);
@@ -86,11 +86,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
-            this.lblWelcome.Font = new System.Drawing.Font("Times New Roman", 26F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.ForeColor = System.Drawing.Color.Red;
-            this.lblWelcome.Location = new System.Drawing.Point(3, 39);
+            this.lblWelcome.Font = new System.Drawing.Font("Times New Roman", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.Crimson;
+            this.lblWelcome.Location = new System.Drawing.Point(3, 87);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(1224, 422);
+            this.lblWelcome.Size = new System.Drawing.Size(890, 263);
             this.lblWelcome.TabIndex = 7;
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -101,9 +101,9 @@
             this.btnStart.BackgroundImage = global::Pikachu_team21.Properties.Resources.power;
             this.btnStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnStart.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnStart.Location = new System.Drawing.Point(718, 531);
+            this.btnStart.Location = new System.Drawing.Point(562, 368);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(70, 70);
+            this.btnStart.Size = new System.Drawing.Size(45, 45);
             this.btnStart.TabIndex = 8;
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
@@ -115,9 +115,9 @@
             this.btnSetting.BackgroundImage = global::Pikachu_team21.Properties.Resources.menu;
             this.btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSetting.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnSetting.Location = new System.Drawing.Point(848, 572);
+            this.btnSetting.Location = new System.Drawing.Point(656, 409);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(70, 70);
+            this.btnSetting.Size = new System.Drawing.Size(45, 45);
             this.btnSetting.TabIndex = 15;
             this.btnSetting.UseVisualStyleBackColor = false;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
@@ -129,20 +129,19 @@
             this.btnTop.BackgroundImage = global::Pikachu_team21.Properties.Resources.brand;
             this.btnTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTop.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnTop.Location = new System.Drawing.Point(311, 572);
+            this.btnTop.Location = new System.Drawing.Point(196, 409);
             this.btnTop.Name = "btnTop";
-            this.btnTop.Size = new System.Drawing.Size(70, 70);
+            this.btnTop.Size = new System.Drawing.Size(45, 45);
             this.btnTop.TabIndex = 16;
             this.btnTop.UseVisualStyleBackColor = false;
             this.btnTop.Click += new System.EventHandler(this.btnTop_Click);
             // 
             // frmHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::Pikachu_team21.Properties.Resources.snapedit_1741537818197;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1230, 804);
+            this.ClientSize = new System.Drawing.Size(896, 559);
             this.Controls.Add(this.btnTop);
             this.Controls.Add(this.btnSetting);
             this.Controls.Add(this.btnStart);

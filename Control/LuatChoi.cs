@@ -11,10 +11,29 @@ namespace Pikachu_team21
     class LuatChoi
     {
         private readonly GameMatrix matranGame;
-
+        private static LuatChoi _instance;
+        public static LuatChoi Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new LuatChoi(GameMatrix.Instance);
+                }
+                return _instance;
+            }
+        }
         public LuatChoi(GameMatrix matranGame)
         {
             this.matranGame = matranGame;
+        }
+
+
+        public void SetDemChung(int dem, int bom, int hin) 
+        { 
+            frmMain.Instance.Dem = dem;
+            frmMain.Instance.DemBomb = bom;
+            frmMain.Instance.DemHint = hin;
         }
 
         public void KtraWin()

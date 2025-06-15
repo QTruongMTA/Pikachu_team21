@@ -31,17 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLevel01));
             this.pnLevel1 = new System.Windows.Forms.Panel();
             this.lblLevel = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pnLevel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnLevel1
             // 
             this.pnLevel1.BackColor = System.Drawing.Color.Transparent;
+            this.pnLevel1.Controls.Add(this.progressBar1);
             this.pnLevel1.Controls.Add(this.lblLevel);
             this.pnLevel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnLevel1.Location = new System.Drawing.Point(0, 0);
             this.pnLevel1.Name = "pnLevel1";
-            this.pnLevel1.Size = new System.Drawing.Size(1230, 804);
+            this.pnLevel1.Size = new System.Drawing.Size(896, 559);
             this.pnLevel1.TabIndex = 0;
             // 
             // lblLevel
@@ -52,20 +54,26 @@
             this.lblLevel.BackColor = System.Drawing.Color.Transparent;
             this.lblLevel.Font = new System.Drawing.Font("Stencil", 42F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblLevel.ForeColor = System.Drawing.Color.Red;
-            this.lblLevel.Location = new System.Drawing.Point(305, 78);
+            this.lblLevel.Location = new System.Drawing.Point(163, 177);
             this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(621, 648);
+            this.lblLevel.Size = new System.Drawing.Size(571, 204);
             this.lblLevel.TabIndex = 16;
             this.lblLevel.Text = "Level 01";
             this.lblLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(193, 433);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(522, 12);
+            this.progressBar1.TabIndex = 17;
+            // 
             // frmLevel01
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1230, 804);
+            this.ClientSize = new System.Drawing.Size(896, 559);
             this.Controls.Add(this.pnLevel1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -82,5 +90,6 @@
 
         private System.Windows.Forms.Panel pnLevel1;
         private System.Windows.Forms.Label lblLevel;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

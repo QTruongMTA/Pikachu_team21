@@ -17,7 +17,6 @@ namespace Pikachu_team21
         private static frmSetting _instance;
         private int selectedSoPokemon;
         private int time;
-        private int level;
         public static frmSetting Instance
         {
             get
@@ -40,7 +39,7 @@ namespace Pikachu_team21
         }
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            if (updLevel.SelectedItem == null || updTime.SelectedItem == null || updPokemon.SelectedItem == null || updTurn.SelectedItem == null)
+            if ( updTime.SelectedItem == null || updPokemon.SelectedItem == null || updTurn.SelectedItem == null)
             {
                 MessageBox.Show("Vui lòng chọn đầy đủ các tùy chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -50,47 +49,17 @@ namespace Pikachu_team21
 
             GameMatrix.Instance.SoPokemon = selectedSoPokemon;
             frmMain.Instance.TimeRemain = time;
-            if (level == 1)
-            {
-                frmLevel01 lvform = new frmLevel01();
-                lvform.Show();
-            }
-            else if (level == 2)
-            {
-                level02 lvform = new level02();
-                lvform.Show();
-            }
-            else if (level == 3)
-            {
-                level03 lvform = new level03();
-                lvform.Show();
-            }
 
             frmMain.Instance.SetData(MaTranGoc.Instance.TaoMatranGoc(8, 12));
             GameMatrix.Instance.HienThi(frmMain.Instance.Panel3(), frmMain.Instance.Data());
 
-            this.Close();
+            frmMain.Instance.Show();
+            Close();
         }
 
         private void frmSetting_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void updLevel_SelectedItemChanged(object sender, EventArgs e)
-        {
-            if (updLevel.SelectedItem.ToString() == "Dễ")
-            {
-                level = 1;
-            }
-            else if (updLevel.SelectedItem.ToString() == "Trung bình")
-            {
-                level = 2;
-            }
-            else if (updLevel.SelectedItem.ToString() == "Khó")
-            {
-                level = 3;
-            }
         }
 
         private void updMusic_SelectedItemChanged(object sender, EventArgs e)
@@ -136,8 +105,6 @@ namespace Pikachu_team21
             {
                 time = 10000;
             }
-        
-            
         }
 
         private void updPokemon_SelectedItemChanged(object sender, EventArgs e)

@@ -26,10 +26,7 @@ namespace Pikachu_team21
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (Application.OpenForms.Count == 2)
-            {
                 Application.Exit();
-            }
         }
 
 

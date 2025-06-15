@@ -36,9 +36,6 @@ namespace Pikachu_team21
                         var path = gameMatrix.DuongNoi(boxes[i].Location, boxes[j].Location);
                         if (path != null && path.Count > 1)
                         {
-                            //Point p1 = (Point)boxes[i].Tag;
-                            //Point p2 = (Point)boxes[j].Tag;
-
                             HighlightBoxes(boxes[i], boxes[j]);
                             return true;
                         }

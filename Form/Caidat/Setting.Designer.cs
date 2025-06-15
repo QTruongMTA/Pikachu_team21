@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSetting));
-            this.lblSetLV = new System.Windows.Forms.Label();
             this.lblSetPic = new System.Windows.Forms.Label();
             this.lblSetTime = new System.Windows.Forms.Label();
             this.lblSetTurn = new System.Windows.Forms.Label();
@@ -38,23 +37,9 @@
             this.updMusic = new System.Windows.Forms.DomainUpDown();
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.updLevel = new System.Windows.Forms.DomainUpDown();
             this.updPokemon = new System.Windows.Forms.DomainUpDown();
             this.updTurn = new System.Windows.Forms.DomainUpDown();
             this.SuspendLayout();
-            // 
-            // lblSetLV
-            // 
-            this.lblSetLV.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSetLV.AutoSize = true;
-            this.lblSetLV.BackColor = System.Drawing.Color.Transparent;
-            this.lblSetLV.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSetLV.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblSetLV.Location = new System.Drawing.Point(101, 59);
-            this.lblSetLV.Name = "lblSetLV";
-            this.lblSetLV.Size = new System.Drawing.Size(98, 28);
-            this.lblSetLV.TabIndex = 5;
-            this.lblSetLV.Text = "CẤP ĐỘ";
             // 
             // lblSetPic
             // 
@@ -63,7 +48,7 @@
             this.lblSetPic.BackColor = System.Drawing.Color.Transparent;
             this.lblSetPic.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSetPic.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblSetPic.Location = new System.Drawing.Point(101, 135);
+            this.lblSetPic.Location = new System.Drawing.Point(176, 94);
             this.lblSetPic.Name = "lblSetPic";
             this.lblSetPic.Size = new System.Drawing.Size(230, 28);
             this.lblSetPic.TabIndex = 6;
@@ -76,7 +61,7 @@
             this.lblSetTime.BackColor = System.Drawing.Color.Transparent;
             this.lblSetTime.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSetTime.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblSetTime.Location = new System.Drawing.Point(101, 211);
+            this.lblSetTime.Location = new System.Drawing.Point(176, 170);
             this.lblSetTime.Name = "lblSetTime";
             this.lblSetTime.Size = new System.Drawing.Size(234, 28);
             this.lblSetTime.TabIndex = 7;
@@ -89,7 +74,7 @@
             this.lblSetTurn.BackColor = System.Drawing.Color.Transparent;
             this.lblSetTurn.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSetTurn.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblSetTurn.Location = new System.Drawing.Point(101, 287);
+            this.lblSetTurn.Location = new System.Drawing.Point(176, 246);
             this.lblSetTurn.Name = "lblSetTurn";
             this.lblSetTurn.Size = new System.Drawing.Size(254, 28);
             this.lblSetTurn.TabIndex = 8;
@@ -103,7 +88,7 @@
             this.lblSetSound.BackColor = System.Drawing.Color.Transparent;
             this.lblSetSound.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSetSound.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblSetSound.Location = new System.Drawing.Point(101, 363);
+            this.lblSetSound.Location = new System.Drawing.Point(176, 322);
             this.lblSetSound.Name = "lblSetSound";
             this.lblSetSound.Size = new System.Drawing.Size(136, 28);
             this.lblSetSound.TabIndex = 9;
@@ -121,7 +106,7 @@
             this.updTime.Items.Add("500s");
             this.updTime.Items.Add("700s");
             this.updTime.Items.Add("Vô hạn");
-            this.updTime.Location = new System.Drawing.Point(370, 215);
+            this.updTime.Location = new System.Drawing.Point(600, 174);
             this.updTime.Name = "updTime";
             this.updTime.ReadOnly = true;
             this.updTime.Size = new System.Drawing.Size(120, 26);
@@ -142,7 +127,7 @@
             this.updMusic.Items.Add("Theme03");
             this.updMusic.Items.Add("Theme04");
             this.updMusic.Items.Add("Theme05");
-            this.updMusic.Location = new System.Drawing.Point(370, 363);
+            this.updMusic.Location = new System.Drawing.Point(600, 322);
             this.updMusic.Name = "updMusic";
             this.updMusic.ReadOnly = true;
             this.updMusic.Size = new System.Drawing.Size(120, 26);
@@ -156,9 +141,9 @@
             this.btnAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnAccept.BackgroundImage = global::Pikachu_team21.Properties.Resources.check__1_;
             this.btnAccept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAccept.Location = new System.Drawing.Point(137, 455);
+            this.btnAccept.Location = new System.Drawing.Point(277, 456);
             this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(70, 70);
+            this.btnAccept.Size = new System.Drawing.Size(45, 45);
             this.btnAccept.TabIndex = 12;
             this.btnAccept.UseVisualStyleBackColor = false;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
@@ -170,32 +155,12 @@
             this.btnCancel.BackgroundImage = global::Pikachu_team21.Properties.Resources.cancel;
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(383, 455);
+            this.btnCancel.Location = new System.Drawing.Point(550, 456);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(70, 70);
+            this.btnCancel.Size = new System.Drawing.Size(45, 45);
             this.btnCancel.TabIndex = 13;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // updLevel
-            // 
-            this.updLevel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.updLevel.AutoSize = true;
-            this.updLevel.BackColor = System.Drawing.Color.LightCyan;
-            this.updLevel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.updLevel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updLevel.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.updLevel.Items.Add("Dễ");
-            this.updLevel.Items.Add("Trung bình");
-            this.updLevel.Items.Add("Khó");
-            this.updLevel.Items.Add("Hủy diệt");
-            this.updLevel.Location = new System.Drawing.Point(370, 63);
-            this.updLevel.Name = "updLevel";
-            this.updLevel.ReadOnly = true;
-            this.updLevel.Size = new System.Drawing.Size(120, 26);
-            this.updLevel.TabIndex = 14;
-            this.updLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.updLevel.SelectedItemChanged += new System.EventHandler(this.updLevel_SelectedItemChanged);
             // 
             // updPokemon
             // 
@@ -210,7 +175,7 @@
             this.updPokemon.Items.Add("24");
             this.updPokemon.Items.Add("36");
             this.updPokemon.Items.Add("46");
-            this.updPokemon.Location = new System.Drawing.Point(370, 139);
+            this.updPokemon.Location = new System.Drawing.Point(600, 98);
             this.updPokemon.Name = "updPokemon";
             this.updPokemon.ReadOnly = true;
             this.updPokemon.Size = new System.Drawing.Size(120, 26);
@@ -230,7 +195,7 @@
             this.updTurn.Items.Add("3");
             this.updTurn.Items.Add("4");
             this.updTurn.Items.Add("5");
-            this.updTurn.Location = new System.Drawing.Point(370, 291);
+            this.updTurn.Location = new System.Drawing.Point(600, 250);
             this.updTurn.Name = "updTurn";
             this.updTurn.ReadOnly = true;
             this.updTurn.Size = new System.Drawing.Size(120, 26);
@@ -241,16 +206,14 @@
             // frmSetting
             // 
             this.AcceptButton = this.btnAccept;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.BackgroundImage = global::Pikachu_team21.Properties.Resources.Changeee;
+            this.BackgroundImage = global::Pikachu_team21.Properties.Resources.a9e290f6914cc118a0b26d075ffd2556;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(590, 556);
+            this.ClientSize = new System.Drawing.Size(896, 559);
             this.Controls.Add(this.updTurn);
             this.Controls.Add(this.updPokemon);
-            this.Controls.Add(this.updLevel);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.updMusic);
@@ -259,7 +222,6 @@
             this.Controls.Add(this.lblSetTurn);
             this.Controls.Add(this.lblSetTime);
             this.Controls.Add(this.lblSetPic);
-            this.Controls.Add(this.lblSetLV);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -273,7 +235,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblSetLV;
         private System.Windows.Forms.Label lblSetPic;
         private System.Windows.Forms.Label lblSetTime;
         private System.Windows.Forms.Label lblSetTurn;
@@ -282,7 +243,6 @@
         private System.Windows.Forms.DomainUpDown updMusic;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.DomainUpDown updLevel;
         private System.Windows.Forms.DomainUpDown updPokemon;
         private System.Windows.Forms.DomainUpDown updTurn;
     }
